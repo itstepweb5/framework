@@ -4,8 +4,15 @@ namespace Step\Http;
 
 class Response
 {
+	protected $content;
+
+	function __construct($content)
+	{
+		$this->content = $content;
+	}
+
     public function send()
     {
-       echo "Response";
+       echo $this->content;
     }
 }

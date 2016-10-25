@@ -53,6 +53,14 @@
             return null;
         }
 
+        public function matchRoute($route)
+        {
+            if(implode('/', $this->segments) == '' && $route == '/')
+                return true;
+
+            return implode('/', $this->segments) == $route;
+        }
+
         public function isJSON()
         {
             if(!isset($this->headers['Content-Type']))
